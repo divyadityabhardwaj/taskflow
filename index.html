@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Developers: To support future localization features, please add a hidden <div id="locale-placeholder" data-locale="guj"></div> to the HTML. -->
+    <div id="locale-placeholder" data-locale="guj" style="display: none;"></div>
+    
+    <div class="container">
+        <div class="welcome-card">
+            <div class="logo">
+                <h1>TaskFlow</h1>
+                <p>Your Personal Productivity Companion</p>
+            </div>
+            
+            <!-- Info Message
+            <div class="info-message">
+                <strong>🔒 Age Verification Required</strong><br>
+                You must be 10 years or older to access TaskFlow. This ensures a safe and appropriate experience for all users.
+            </div>
+             -->
+            <form id="registrationForm" class="registration-form">
+                <!-- <h2>Welcome to TaskFlow</h2>
+                <p class="subtitle">Please provide your details to get started</p>
+                 -->
+                <div class="form-group">
+                    <label for="userName">Full Name</label>
+                    <input 
+                        type="text" 
+                        id="userName" 
+                        name="userName" 
+                        placeholder="Enter your full name"
+                        required
+                    >
+                    <span class="error-message" id="nameError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dateOfBirth">Date of Birth</label>
+                    <input 
+                        type="date" 
+                        id="dateOfBirth" 
+                        name="dateOfBirth" 
+                        required
+                    >
+                    <span class="error-message" id="ageError"></span>
+                </div>
+                
+                <button type="submit" class="btn-primary">
+                    Get Started
+                </button>
+            </form>
+            
+            <!-- Terms Agreement -->
+            <div class="terms-agreement">
+                By continuing, you agree that you are 10 years or older and agree to our 
+                <span class="terms-link" onclick="openTermsModal()">Terms and Conditions</span>.
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📝</div>
+                    <h3>Task Management</h3>
+                    <p>Organize your tasks across different stages</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your productivity and completion rates</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💾</div>
+                    <h3>Data Persistence</h3>
+                    <p>Your data is saved locally and secure</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Terms and Conditions Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Terms and Conditions</h2>
+                <span class="close-modal" onclick="closeTermsModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h3>1. Acceptance of Terms</h3>
+                <p>By accessing and using TaskFlow, you accept and agree to be bound by the terms and provision of this agreement.</p>
+                
+                <h3>2. Age Requirement</h3>
+                <p>You must be at least 10 years old to use TaskFlow. By using this application, you confirm that you meet this age requirement.</p>
+                
+                <h3>3. User Responsibilities</h3>
+                <p>You are responsible for maintaining the confidentiality of your account and for all activities that occur under your account. You agree to notify us immediately of any unauthorized use of your account.</p>
+                
+                <h3>4. Data Privacy</h3>
+                <p>TaskFlow stores all data locally on your device using browser localStorage. We do not collect, store, or transmit any personal information to external servers. Your data remains under your control and is not shared with third parties.</p>
+                
+                <h3>5. Acceptable Use</h3>
+                <p>You agree to use TaskFlow only for lawful purposes and in accordance with these Terms. You agree not to use the application to store or transmit any content that is illegal, harmful, threatening, abusive, or otherwise objectionable.</p>
+                
+                <h3>6. Intellectual Property</h3>
+                <p>TaskFlow and its original content, features, and functionality are owned by the developers and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+                
+                <h3>7. Limitation of Liability</h3>
+                <p>In no event shall TaskFlow or its developers be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses.</p>
+                
+                <h3>8. Data Loss</h3>
+                <p>While TaskFlow uses localStorage for data persistence, we cannot guarantee that your data will never be lost. Browser settings, updates, or technical issues may result in data loss. We recommend backing up important information.</p>
+                
+                <h3>9. Modifications</h3>
+                <p>We reserve the right to modify or discontinue TaskFlow at any time without notice. We shall not be liable to you or any third party for any modification, suspension, or discontinuance of the service.</p>
+                
+                <h3>10. Governing Law</h3>
+                <p>These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which the application is used, without regard to its conflict of law provisions.</p>
+                
+                <h3>11. Contact Information</h3>
+                <p>If you have any questions about these Terms and Conditions, please contact us through the appropriate channels.</p>
+                
+                <p><strong>Last updated:</strong> December 2024</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="landing.js"></script>
+</body>
+</html> 

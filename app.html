@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Task Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Developers: To support future localization features, please add a hidden <div id="locale-placeholder" data-locale="guj"></div> to the HTML. -->
+    <div id="locale-placeholder" data-locale="guj" style="display: none;"></div>
+    
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo">
+                <h1>TaskFlow</h1>
+            </div>
+            
+            <div class="user-profile">
+                <img id="userAvatar" src="" alt="User Avatar" class="avatar">
+                <div class="user-info">
+                    <span id="userName">User</span>
+                    <button id="signOutBtn" class="btn-signout">Sign Out</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="app-main">
+        <div class="task-input-section">
+            <div class="task-input-container">
+                <input 
+                    type="text" 
+                    id="newTaskInput" 
+                    placeholder="Add a new task..."
+                    class="task-input"
+                >
+                <button id="addTaskBtn" class="btn-add-task">Add Task</button>
+            </div>
+        </div>
+        
+        <!-- Navigation Header -->
+        <div class="stage-navigation">
+            <button class="nav-tab active" data-stage="todo">
+                <span class="nav-title">Todo</span>
+                <span class="nav-count" id="todoCount">0</span>
+            </button>
+            <button class="nav-tab" data-stage="completed">
+                <span class="nav-title">Completed</span>
+                <span class="nav-count" id="completedCount">0</span>
+            </button>
+            <button class="nav-tab" data-stage="archived">
+                <span class="nav-title">Archived</span>
+                <span class="nav-count" id="archivedCount">0</span>
+            </button>
+        </div>
+        
+        <!-- Task Content Area -->
+        <div class="task-content-area">
+            <!-- Todo Stage -->
+            <div class="task-stage active" id="todoStage">
+                <div class="stage-header">
+                    <h2>Todo</h2>
+                    <p class="stage-description">Tasks that need to be completed</p>
+                </div>
+                <div class="task-list" id="todoList">
+                    <!-- Tasks will be dynamically added here -->
+                </div>
+            </div>
+            
+            <!-- Completed Stage -->
+            <div class="task-stage" id="completedStage">
+                <div class="stage-header">
+                    <h2>Completed</h2>
+                    <p class="stage-description">Tasks that have been finished</p>
+                </div>
+                <div class="task-list" id="completedList">
+                    <!-- Completed tasks will be dynamically added here -->
+                </div>
+            </div>
+            
+            <!-- Archived Stage -->
+            <div class="task-stage" id="archivedStage">
+                <div class="stage-header">
+                    <h2>Archived</h2>
+                    <p class="stage-description">Tasks that are no longer active</p>
+                </div>
+                <div class="task-list" id="archivedList">
+                    <!-- Archived tasks will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="app.js"></script>
+</body>
+</html> 

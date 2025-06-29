@@ -68,7 +68,6 @@ class TaskFlowApp {
             this.user = JSON.parse(userData);
             return this.user.name && this.user.dateOfBirth;
         } catch (error) {
-            console.error('Error parsing user data:', error);
             return false;
         }
     }
@@ -93,7 +92,6 @@ class TaskFlowApp {
             try {
                 this.tasks = JSON.parse(savedTasks);
             } catch (error) {
-                console.error('Error loading tasks:', error);
                 this.tasks = { todo: [], completed: [], archived: [] };
             }
         }
@@ -103,7 +101,6 @@ class TaskFlowApp {
         try {
             localStorage.setItem('taskflow_tasks', JSON.stringify(this.tasks));
         } catch (error) {
-            console.error('Error saving tasks:', error);
         }
     }
     
@@ -137,7 +134,6 @@ class TaskFlowApp {
                 this.renderAllTasks();
             }
         } catch (error) {
-            console.error('Error loading dummy data:', error);
             // Fallback dummy data
             const fallbackTasks = [
                 { id: this.generateId(), title: 'Welcome to TaskFlow!', timestamp: new Date().toISOString(), lastModified: new Date().toISOString() },
@@ -288,6 +284,17 @@ class TaskFlowApp {
         const taskCard = document.createElement('div');
         taskCard.className = 'task-card';
         taskCard.dataset.taskId = task.id;
+        
+        // Add delete icon at top right
+        const deleteIcon = document.createElement('div');
+        deleteIcon.className = 'delete-icon';
+        deleteIcon.innerHTML = '🗑️';
+        deleteIcon.title = 'Delete task';
+        deleteIcon.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.deleteTask(task.id, stage);
+        });
+        taskCard.appendChild(deleteIcon);
         
         const taskContent = document.createElement('div');
         taskContent.className = 'task-content';
@@ -440,6 +447,20 @@ class TaskFlowApp {
                 }
             }, 300);
         }, 3000);
+    }
+    
+    deleteTask(taskId, stage) {
+        const taskIndex = this.tasks[stage].findIndex(task => task.id === taskId);
+        
+        if (taskIndex === -1) return;
+        
+        // Remove task from the stage
+        this.tasks[stage].splice(taskIndex, 1);
+        
+        this.saveTasks();
+        this.renderAllTasks();
+        
+        this.showNotification(`Task deleted from ${stage}`, 'success');
     }
 }
 

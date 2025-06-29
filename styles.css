@@ -466,19 +466,43 @@ body {
 }
 
 .task-card {
-    background: rgba(44, 62, 80, 0.6);
-    border-radius: 10px;
-    padding: 16px;
-    margin-bottom: 12px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border-left: 4px solid #3498db;
+    background: rgba(52, 73, 94, 0.8);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
 }
 
 .task-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    background: rgba(44, 62, 80, 0.8);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.delete-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+    padding: 5px;
+    border-radius: 50%;
+    background: rgba(231, 76, 60, 0.1);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    background: rgba(231, 76, 60, 0.2);
 }
 
 .task-content {
@@ -879,6 +903,14 @@ input:focus {
         margin: 10% auto;
         width: 95%;
         padding: 20px;
+    }
+    
+    .delete-icon {
+        top: 8px;
+        right: 8px;
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
     }
 }
 

@@ -10,7 +10,7 @@ A modern, responsive todo application built with vanilla JavaScript, HTML, and C
 
 - **Age Verification**: Users must be over 10 years old to access the application
 - **User Registration**: Simple name and date of birth registration
-- **Task Management**: Create, move, and organize tasks across three stages
+- **Task Management**: Create, move, delete, and organize tasks across three stages
 - **Data Persistence**: All data is saved locally using browser localStorage
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
 
@@ -182,10 +182,12 @@ Then open `http://localhost:3000` in your browser
 
 1. **Adding Tasks**: Use the input field at the top to add new tasks
 2. **Moving Tasks**: Use action buttons to move tasks between stages
-3. **Task Actions**:
+3. **Deleting Tasks**: Click the 🗑️ icon in the top-right corner of any task card to permanently delete it
+4. **Task Actions**:
    - **Todo Stage**: "Mark as Completed" or "Archive"
    - **Completed Stage**: "Move to Todo" or "Archive"
    - **Archived Stage**: "Move to Todo" or "Move to Completed"
+   - **All Stages**: Delete icon (🗑️) for permanent removal
 
 ### User Profile
 
@@ -261,19 +263,6 @@ Then open `http://localhost:3000` in your browser
 - **API Fallbacks**: Graceful handling of API failures
 - **Data Integrity**: Safe localStorage operations
 - **User Feedback**: Clear error messages
-
-## 🧪 Testing Checklist
-
-Before submission, ensure all features work correctly:
-
-- [ ] Age verification (>10 years old)
-- [ ] User data persistence across sessions
-- [ ] Task stage transitions (Todo ↔ Completed ↔ Archived)
-- [ ] API integrations (UI Avatars, DummyJSON)
-- [ ] Responsive design on mobile devices
-- [ ] Form validation and error handling
-- [ ] Sign out functionality
-- [ ] No console errors
 
 ## 🚀 Deployment
 

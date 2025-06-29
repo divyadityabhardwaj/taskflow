@@ -16,11 +16,7 @@ class LandingPage {
         
         // Check if all required elements exist
         if (!this.form || !this.userNameInput || !this.dateOfBirthInput) {
-            console.error('Required form elements not found:', {
-                form: !!this.form,
-                userNameInput: !!this.userNameInput,
-                dateOfBirthInput: !!this.dateOfBirthInput
-            });
+
             return;
         }
         
@@ -47,7 +43,7 @@ class LandingPage {
                     return;
                 }
             } catch (error) {
-                console.error('Error parsing user data:', error);
+
             }
         }
         
@@ -238,7 +234,7 @@ class LandingPage {
             return true;
             
         } catch (error) {
-            console.error('Error in age validation:', error);
+
             this.showError(this.ageError, 'Error validating age. Please try again.');
             return false;
         }
@@ -287,7 +283,7 @@ class LandingPage {
                 window.location.href = 'app.html';
             }, 1500);
         } catch (error) {
-            console.error('Error saving user data:', error);
+
             alert('Error saving user data. Please try again.');
         }
     }
